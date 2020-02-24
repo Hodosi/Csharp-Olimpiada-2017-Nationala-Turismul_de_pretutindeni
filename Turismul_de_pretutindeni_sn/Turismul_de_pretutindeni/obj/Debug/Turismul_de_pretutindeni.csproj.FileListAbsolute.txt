@@ -1,0 +1,9 @@
+D:\Desktop\2017 Nationala\Turismul_de_pretutindeni_sn\Turismul_de_pretutindeni\bin\Debug\Turismul_de_pretutindeni.exe
+D:\Desktop\2017 Nationala\Turismul_de_pretutindeni_sn\Turismul_de_pretutindeni\bin\Debug\Turismul_de_pretutindeni.pdb
+D:\Desktop\2017 Nationala\Turismul_de_pretutindeni_sn\Turismul_de_pretutindeni\obj\Debug\Turismul_de_pretutindeni.csprojAssemblyReference.cache
+D:\Desktop\2017 Nationala\Turismul_de_pretutindeni_sn\Turismul_de_pretutindeni\obj\Debug\Turismul_de_pretutindeni.FrmAutentificare.resources
+D:\Desktop\2017 Nationala\Turismul_de_pretutindeni_sn\Turismul_de_pretutindeni\obj\Debug\Turismul_de_pretutindeni.Properties.Resources.resources
+D:\Desktop\2017 Nationala\Turismul_de_pretutindeni_sn\Turismul_de_pretutindeni\obj\Debug\Turismul_de_pretutindeni.csproj.GenerateResource.cache
+D:\Desktop\2017 Nationala\Turismul_de_pretutindeni_sn\Turismul_de_pretutindeni\obj\Debug\Turismul_de_pretutindeni.exe
+D:\Desktop\2017 Nationala\Turismul_de_pretutindeni_sn\Turismul_de_pretutindeni\obj\Debug\Turismul_de_pretutindeni.pdb
+D:\Desktop\2017 Nationala\Turismul_de_pretutindeni_sn\Turismul_de_pretutindeni\bin\Debug\Turismul_de_pretutindeni.exe.config
