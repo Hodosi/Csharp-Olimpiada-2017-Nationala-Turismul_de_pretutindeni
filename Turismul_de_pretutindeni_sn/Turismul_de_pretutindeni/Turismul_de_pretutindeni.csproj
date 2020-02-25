@@ -57,17 +57,35 @@
     <Compile Include="FrmInregistrare.Designer.cs">
       <DependentUpon>FrmInregistrare.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmRezerva.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRezerva.Designer.cs">
+      <DependentUpon>FrmRezerva.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmVacanta.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmVacanta.Designer.cs">
       <DependentUpon>FrmVacanta.cs</DependentUpon>
     </Compile>
+    <Compile Include="GLOBAL.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="REZERVARI.cs" />
     <Compile Include="UTILIZATORI.cs" />
+    <Compile Include="VACANTA.cs" />
     <EmbeddedResource Include="FrmAutentificare.resx">
       <DependentUpon>FrmAutentificare.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmInregistrare.resx">
+      <DependentUpon>FrmInregistrare.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRezerva.resx">
+      <DependentUpon>FrmRezerva.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmVacanta.resx">
+      <DependentUpon>FrmVacanta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

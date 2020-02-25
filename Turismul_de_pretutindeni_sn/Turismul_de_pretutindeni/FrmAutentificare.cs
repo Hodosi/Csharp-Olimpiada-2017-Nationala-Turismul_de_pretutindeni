@@ -104,7 +104,6 @@ namespace Turismul_de_pretutindeni
 
             if (util.userExists(email, pass))
             {
-                this.Close();
                 if (checkBox1.CheckState == CheckState.Checked)
                 {
                     Turismul_de_pretutindeni.Properties.Settings.Default.email = email;
@@ -115,9 +114,13 @@ namespace Turismul_de_pretutindeni
                     Turismul_de_pretutindeni.Properties.Settings.Default.email = "";
                     Turismul_de_pretutindeni.Properties.Settings.Default.Save();
                 }
-                
+
+                GLOBAL.emailGlobal = email;
+                this.Hide();
                 FrmVacanta frm = new FrmVacanta();
+                frm.emailToolStripMenuItem.Text = email;
                 frm.ShowDialog();
+                this.Close();
             }
             else
             {
@@ -129,8 +132,10 @@ namespace Turismul_de_pretutindeni
 
         private void button_register_Click(object sender, EventArgs e)
         {
+            this.Hide();
             FrmInregistrare frm = new FrmInregistrare();
-            frm.Show();
+            frm.ShowDialog();
+            this.Close();
         }
     }
 }

@@ -7,3 +7,6 @@ D:\Desktop\2017 Nationala\Turismul_de_pretutindeni_sn\Turismul_de_pretutindeni\o
 D:\Desktop\2017 Nationala\Turismul_de_pretutindeni_sn\Turismul_de_pretutindeni\obj\Debug\Turismul_de_pretutindeni.exe
 D:\Desktop\2017 Nationala\Turismul_de_pretutindeni_sn\Turismul_de_pretutindeni\obj\Debug\Turismul_de_pretutindeni.pdb
 D:\Desktop\2017 Nationala\Turismul_de_pretutindeni_sn\Turismul_de_pretutindeni\bin\Debug\Turismul_de_pretutindeni.exe.config
+D:\Desktop\2017 Nationala\Turismul_de_pretutindeni_sn\Turismul_de_pretutindeni\obj\Debug\Turismul_de_pretutindeni.FrmInregistrare.resources
+D:\Desktop\2017 Nationala\Turismul_de_pretutindeni_sn\Turismul_de_pretutindeni\obj\Debug\Turismul_de_pretutindeni.FrmVacanta.resources
+D:\Desktop\2017 Nationala\Turismul_de_pretutindeni_sn\Turismul_de_pretutindeni\obj\Debug\Turismul_de_pretutindeni.FrmRezerva.resources

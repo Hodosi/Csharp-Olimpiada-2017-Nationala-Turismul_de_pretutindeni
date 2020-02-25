@@ -1,0 +1,1 @@
+﻿DBCC CHECKIDENT (Vacante,RESEED,0)

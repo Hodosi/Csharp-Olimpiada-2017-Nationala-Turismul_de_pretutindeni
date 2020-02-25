@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox_email = new System.Windows.Forms.TextBox();
+            this.button_login = new System.Windows.Forms.Button();
+            this.button_register = new System.Windows.Forms.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.textBox_parola = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.button_register = new System.Windows.Forms.Button();
-            this.button_login = new System.Windows.Forms.Button();
+            this.textBox_email = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,21 +55,35 @@
             this.panel1.Size = new System.Drawing.Size(564, 400);
             this.panel1.TabIndex = 0;
             // 
-            // label1
+            // button_login
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(72, 80);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 29);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Email:";
+            this.button_login.Location = new System.Drawing.Point(300, 301);
+            this.button_login.Name = "button_login";
+            this.button_login.Size = new System.Drawing.Size(236, 51);
+            this.button_login.TabIndex = 6;
+            this.button_login.Text = "Autentificare";
+            this.button_login.UseVisualStyleBackColor = true;
+            this.button_login.Click += new System.EventHandler(this.button_login_Click);
             // 
-            // textBox_email
+            // button_register
             // 
-            this.textBox_email.Location = new System.Drawing.Point(158, 75);
-            this.textBox_email.Name = "textBox_email";
-            this.textBox_email.Size = new System.Drawing.Size(325, 34);
-            this.textBox_email.TabIndex = 1;
+            this.button_register.Location = new System.Drawing.Point(25, 301);
+            this.button_register.Name = "button_register";
+            this.button_register.Size = new System.Drawing.Size(236, 51);
+            this.button_register.TabIndex = 5;
+            this.button_register.Text = "Inregistrare";
+            this.button_register.UseVisualStyleBackColor = true;
+            this.button_register.Click += new System.EventHandler(this.button_register_Click);
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(233, 217);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(170, 33);
+            this.checkBox1.TabIndex = 4;
+            this.checkBox1.Text = "Retine email";
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // textBox_parola
             // 
@@ -88,35 +102,21 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Parola:";
             // 
-            // checkBox1
+            // textBox_email
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(233, 217);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(170, 33);
-            this.checkBox1.TabIndex = 4;
-            this.checkBox1.Text = "Retine email";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.textBox_email.Location = new System.Drawing.Point(158, 75);
+            this.textBox_email.Name = "textBox_email";
+            this.textBox_email.Size = new System.Drawing.Size(325, 34);
+            this.textBox_email.TabIndex = 1;
             // 
-            // button_register
+            // label1
             // 
-            this.button_register.Location = new System.Drawing.Point(25, 301);
-            this.button_register.Name = "button_register";
-            this.button_register.Size = new System.Drawing.Size(236, 51);
-            this.button_register.TabIndex = 5;
-            this.button_register.Text = "Inregistrare";
-            this.button_register.UseVisualStyleBackColor = true;
-            this.button_register.Click += new System.EventHandler(this.button_register_Click);
-            // 
-            // button_login
-            // 
-            this.button_login.Location = new System.Drawing.Point(300, 301);
-            this.button_login.Name = "button_login";
-            this.button_login.Size = new System.Drawing.Size(236, 51);
-            this.button_login.TabIndex = 6;
-            this.button_login.Text = "Autentificare";
-            this.button_login.UseVisualStyleBackColor = true;
-            this.button_login.Click += new System.EventHandler(this.button_login_Click);
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(72, 80);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(80, 29);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Email:";
             // 
             // FrmAutentificare
             // 
@@ -125,6 +125,7 @@
             this.ClientSize = new System.Drawing.Size(564, 400);
             this.Controls.Add(this.panel1);
             this.Name = "FrmAutentificare";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmAutentificare";
             this.Load += new System.EventHandler(this.FrmAutentificare_Load);
             this.panel1.ResumeLayout(false);
