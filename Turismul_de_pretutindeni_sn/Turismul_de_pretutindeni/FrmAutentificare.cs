@@ -20,8 +20,13 @@ namespace Turismul_de_pretutindeni
         }
         CONNECTION conn = new CONNECTION();
         UTILIZATORI util = new UTILIZATORI();
+        QUERYS que = new QUERYS();
         private void FrmAutentificare_Load(object sender, EventArgs e)
         {
+            if (que.dbccVacante())
+            {
+                MessageBox.Show("Hei");
+            }
             this.textBox_email.Text = Turismul_de_pretutindeni.Properties.Settings.Default.email;
             stergere_Vacante();
             initializare_Vacante();

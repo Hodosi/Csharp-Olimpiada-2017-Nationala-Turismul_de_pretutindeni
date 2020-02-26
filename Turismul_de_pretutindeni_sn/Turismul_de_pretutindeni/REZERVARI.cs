@@ -10,11 +10,13 @@ namespace Turismul_de_pretutindeni
     class REZERVARI
     {
         CONNECTION conn = new CONNECTION();
-        public DataTable getRezervari()
+        public DataTable getRezervari(string nm)
         {
             SqlCommand command = new SqlCommand();
-            command.CommandText = "SELECT Utilizatori.Nume,Vacante.NumeVacanta,Rezervari.DataInceput,Rezervari.DataSfarsit,Rezervari.NrPersoane,Rezervari.PretTotal FROM Rezervari INNER JOIN Utilizatori ON Rezervari.IdUser=Utilizatori.IdUser INNER JOIN Vacante ON Rezervari.IdVacanta=Vacante.IdVacanta";
+            command.CommandText = "SELECT Utilizatori.Nume,Vacante.NumeVacanta,Rezervari.DataInceput,Rezervari.DataSfarsit,Rezervari.NrPersoane,Rezervari.PretTotal FROM Rezervari INNER JOIN Utilizatori ON Rezervari.IdUser=Utilizatori.IdUser INNER JOIN Vacante ON Rezervari.IdVacanta=Vacante.IdVacanta WHERE Vacante.NumeVacanta=@nm";
             command.Connection = conn.GetConnection();
+
+            command.Parameters.Add("nm", SqlDbType.VarChar).Value = nm;
 
             DataTable table = new DataTable();
             SqlDataAdapter adapter = new SqlDataAdapter();
@@ -24,14 +26,16 @@ namespace Turismul_de_pretutindeni
             return table;
         }
 
-        public int getNrLocuriRezervate(int id)
+        public int getNrLocuriRezervate(int id, DateTime din,DateTime dout)
         {
             SqlCommand command = new SqlCommand();
             //command.CommandText = "SELECT Utilizatori.Nume,Vacante.NumeVacanta,Rezervari.DataInceput,Rezervari.DataSfarsit,Rezervari.NrPersoane,Rezervari.PretTotal FROM Rezervari INNER JOIN Utilizatori ON Rezervari.IdUser=Utilizatori.IdUser INNER JOIN Vacante ON Rezervari.IdVacanta=Vacante.IdVacanta";
-            command.CommandText = "SELECT SUM(NrPersoane) FROM Rezervari WHERE IdVacanta=@id";
+            command.CommandText = "SELECT SUM(NrPersoane) FROM Rezervari WHERE IdVacanta=@id AND DataSfarsit>@din AND DataInceput<@dout";
             command.Connection = conn.GetConnection();
 
             command.Parameters.Add("id", SqlDbType.VarChar).Value = id;
+            command.Parameters.Add("din", SqlDbType.DateTime).Value = din;
+            command.Parameters.Add("dout", SqlDbType.DateTime).Value = dout;
 
             DataTable table = new DataTable();
             SqlDataAdapter adapter = new SqlDataAdapter();

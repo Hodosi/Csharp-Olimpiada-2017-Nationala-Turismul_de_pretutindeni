@@ -17,6 +17,7 @@ namespace Turismul_de_pretutindeni
             InitializeComponent();
         }
 
+        Graphics graphics;
         VACANTA vacant = new VACANTA();
         List<string> allImg = new List<string>();
         int locIndex = 0;
@@ -101,6 +102,33 @@ namespace Turismul_de_pretutindeni
             FrmRezerva frm = new FrmRezerva();
             frm.label_nume.Text = nmImg;
             frm.ShowDialog();
+        }
+
+        private void button_Poster_Click(object sender, EventArgs e)
+        {
+            string fnLoc = Application.StartupPath + @"\Resurse\ImaginiLoc\" + allImg[locIndex];
+            //----------------------------------------------
+            Image image = (Image)Image.FromFile(fnLoc);
+            graphics = Graphics.FromImage(image);
+            //-----------------------------------------------
+            Font font = new Font("Arial", 30, FontStyle.Bold);
+            SolidBrush blackBrush = new SolidBrush(Color.Black);
+
+            int lnLoc = nmImg.Length;
+            string litera;
+            for(int i = 0; i < lnLoc; i++)
+            {
+                litera = nmImg.Substring(i, 1);
+                graphics.DrawString(litera, font, blackBrush, 20 * (i + 1), 30);
+            }
+            //-------------------------------------------------
+            saveFileDialog1.Filter = "PNG (*.png)|*.png";
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                string fn = saveFileDialog1.FileName;
+                image.Save(fn);
+
+            }
         }
     }
 }

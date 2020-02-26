@@ -22,12 +22,17 @@ namespace Turismul_de_pretutindeni
         int locuriRezervate;
         private void FrmRezerva_Load(object sender, EventArgs e)
         {
-            this.dataGridView1.DataSource = rezerv.getRezervari();
             nmLoc = this.label_nume.Text;
+            this.dataGridView1.DataSource = rezerv.getRezervari(nmLoc);
+        }
+
+        public void setNumericDownValue()
+        {
+            DateTime dateIn = this.dateTimePicker1.Value;
+            DateTime dateOut = this.dateTimePicker2.Value;
             int idVacanata = rezerv.getidVacanta(nmLoc);
-            locuriRezervate = rezerv.getNrLocuriRezervate(idVacanata);
-            // MessageBox.Show(locuriRezervate);
-            this.numericUpDown1.Maximum = int.Parse(vacant.getLocuri(nmLoc))-locuriRezervate;
+            locuriRezervate = rezerv.getNrLocuriRezervate(idVacanata,dateIn,dateOut);
+            this.numericUpDown1.Maximum = int.Parse(vacant.getLocuri(nmLoc)) - locuriRezervate;
         }
 
         public void getSuma()
@@ -50,31 +55,36 @@ namespace Turismul_de_pretutindeni
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
+            setNumericDownValue();
             getSuma();
         }
 
         private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
         {
+            setNumericDownValue();
             getSuma();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             int pers = int.Parse(this.numericUpDown1.Value.ToString());
-            float pretTotal = float.Parse(this.textBox1.Text);
+            float.TryParse(this.textBox1.Text,out float pretTotal);
             DateTime dateIn = this.dateTimePicker1.Value;
             DateTime dateOut = this.dateTimePicker2.Value;
             int idUser = rezerv.getidUser(GLOBAL.emailGlobal);
             int idVacanata = rezerv.getidVacanta(nmLoc);
+            if (dateOut < dateIn)
+            {
+                MessageBox.Show("Date incorecte");
+                return;
+            }
 
             //inserare
             if (rezerv.addRezervari(idVacanata, idUser, dateIn, dateOut, pers, pretTotal))
             {
                 MessageBox.Show("Rezervat!");
-                this.dataGridView1.DataSource = rezerv.getRezervari();
-                idVacanata = rezerv.getidVacanta(nmLoc);
-                locuriRezervate = rezerv.getNrLocuriRezervate(idVacanata);
-                this.numericUpDown1.Maximum = int.Parse(vacant.getLocuri(nmLoc)) - locuriRezervate;
+                this.dataGridView1.DataSource = rezerv.getRezervari(nmLoc);
+                setNumericDownValue();
             }
             else
             {
