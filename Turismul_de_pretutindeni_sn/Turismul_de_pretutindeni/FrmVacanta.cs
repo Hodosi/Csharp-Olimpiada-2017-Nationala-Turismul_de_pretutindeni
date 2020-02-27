@@ -130,5 +130,43 @@ namespace Turismul_de_pretutindeni
 
             }
         }
+
+        private void adaugaAdminNouToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FrmAdminNou frm = new FrmAdminNou();
+            frm.ShowDialog();
+            this.Close();
+        }
+
+        private void adaugaVacanteNoiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FrmAdaugaVacante frm = new FrmAdaugaVacante();
+            frm.ShowDialog();
+            this.Show();
+        }
+
+        private void vacanteleMeleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GLOBAL.vacantaGlobal = nmImg;
+            this.Hide();
+            FrmVacanteleMele frm = new FrmVacanteleMele();
+            frm.ShowDialog();
+            this.Show();
+        }
+
+        private void deconectareToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FrmAutentificare frm = new FrmAutentificare();
+            frm.ShowDialog();
+            this.Close();
+        }
+
+        private void iesireToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -25,8 +25,24 @@ namespace Turismul_de_pretutindeni
 
             return table;
         }
+        public DataTable getRezervariByEmail(string email)
+        {
+            SqlCommand command = new SqlCommand();
+            command.CommandText = "SELECT Vacante.NumeVacanta,Rezervari.DataInceput,Rezervari.DataSfarsit,Rezervari.NrPersoane,Rezervari.PretTotal FROM Rezervari INNER JOIN Utilizatori ON Rezervari.IdUser=Utilizatori.IdUser INNER JOIN Vacante ON Rezervari.IdVacanta=Vacante.IdVacanta WHERE Utilizatori.Email=@em";
+            command.Connection = conn.GetConnection();
 
-        public int getNrLocuriRezervate(int id, DateTime din,DateTime dout)
+            //command.Parameters.Add("nm", SqlDbType.VarChar).Value = nm;
+            command.Parameters.Add("em", SqlDbType.VarChar).Value = email;
+
+            DataTable table = new DataTable();
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            adapter.SelectCommand = command;
+            adapter.Fill(table);
+
+            return table;
+        }
+
+        public int getNrLocuriRezervate(int id, DateTime din, DateTime dout)
         {
             SqlCommand command = new SqlCommand();
             //command.CommandText = "SELECT Utilizatori.Nume,Vacante.NumeVacanta,Rezervari.DataInceput,Rezervari.DataSfarsit,Rezervari.NrPersoane,Rezervari.PretTotal FROM Rezervari INNER JOIN Utilizatori ON Rezervari.IdUser=Utilizatori.IdUser INNER JOIN Vacante ON Rezervari.IdVacanta=Vacante.IdVacanta";
@@ -78,7 +94,7 @@ namespace Turismul_de_pretutindeni
             return int.Parse(table.Rows[0][0].ToString());
         }
 
-        public bool addRezervari(int IdVac,int idUs,DateTime din,DateTime dout,int nrpers,float pret)
+        public bool addRezervari(int IdVac, int idUs, DateTime din, DateTime dout, int nrpers, float pret)
         {
             SqlCommand command = new SqlCommand();
             command.CommandText = "INSERT INTO Rezervari(IdVacanta,IdUser,DataInceput,DataSfarsit,NrPersoane,PretTotal) VALUES(@idv,@idu,@din,@dout,@nr,@pret)";
@@ -104,5 +120,29 @@ namespace Turismul_de_pretutindeni
                 return false;
             }
         }
+        public bool deleteRezervare(int pret)
+        {
+            SqlCommand command = new SqlCommand();
+            command.CommandText = "DELETE FROM Rezervari WHERE PretTotal=@pret";
+            command.Connection = conn.GetConnection();
+
+            //idv,@idu,@din,@dout,@nr,@pret
+            command.Parameters.Add("pret", SqlDbType.Int).Value = pret;
+
+
+            conn.openConnection();
+            if (command.ExecuteNonQuery() == 1)
+            {
+                conn.closeConnection();
+                return true;
+            }
+            else
+            {
+                conn.closeConnection();
+                return false;
+            }
+        }
+
+
     }
 }

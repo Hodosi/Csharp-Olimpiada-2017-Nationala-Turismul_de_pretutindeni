@@ -10,3 +10,6 @@ D:\Desktop\2017 Nationala\Turismul_de_pretutindeni_sn\Turismul_de_pretutindeni\b
 D:\Desktop\2017 Nationala\Turismul_de_pretutindeni_sn\Turismul_de_pretutindeni\obj\Debug\Turismul_de_pretutindeni.FrmInregistrare.resources
 D:\Desktop\2017 Nationala\Turismul_de_pretutindeni_sn\Turismul_de_pretutindeni\obj\Debug\Turismul_de_pretutindeni.FrmVacanta.resources
 D:\Desktop\2017 Nationala\Turismul_de_pretutindeni_sn\Turismul_de_pretutindeni\obj\Debug\Turismul_de_pretutindeni.FrmRezerva.resources
+D:\Desktop\2017 Nationala\Turismul_de_pretutindeni_sn\Turismul_de_pretutindeni\obj\Debug\Turismul_de_pretutindeni.FrmAdminNou.resources
+D:\Desktop\2017 Nationala\Turismul_de_pretutindeni_sn\Turismul_de_pretutindeni\obj\Debug\Turismul_de_pretutindeni.FrmAdaugaVacante.resources
+D:\Desktop\2017 Nationala\Turismul_de_pretutindeni_sn\Turismul_de_pretutindeni\obj\Debug\Turismul_de_pretutindeni.FrmVacanteleMele.resources

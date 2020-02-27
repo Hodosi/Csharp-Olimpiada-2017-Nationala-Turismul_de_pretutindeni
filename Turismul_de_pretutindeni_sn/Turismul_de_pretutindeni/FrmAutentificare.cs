@@ -30,6 +30,7 @@ namespace Turismul_de_pretutindeni
             this.textBox_email.Text = Turismul_de_pretutindeni.Properties.Settings.Default.email;
             stergere_Vacante();
             initializare_Vacante();
+   
         }
         void initializare_Vacante()
         {
@@ -46,6 +47,10 @@ namespace Turismul_de_pretutindeni
                 siruri = sir.Split(split);
                 //-------------------------------
                 nume = siruri[0];
+                if(nume == "")
+                {
+                    return;
+                }
                 despre = siruri[1];
                 pret = float.Parse(siruri[2]);
                 nrlocuri = int.Parse(siruri[3]);
@@ -89,6 +94,8 @@ namespace Turismul_de_pretutindeni
                 command.ExecuteNonQuery();
                 conn.closeConnection();
             }
+
+            readerText.Close();
         }
 
         void stergere_Vacante()

@@ -203,18 +203,21 @@
             this.adaugaAdminNouToolStripMenuItem.Name = "adaugaAdminNouToolStripMenuItem";
             this.adaugaAdminNouToolStripMenuItem.Size = new System.Drawing.Size(320, 36);
             this.adaugaAdminNouToolStripMenuItem.Text = "Adauga Admin Nou";
+            this.adaugaAdminNouToolStripMenuItem.Click += new System.EventHandler(this.adaugaAdminNouToolStripMenuItem_Click);
             // 
             // adaugaVacanteNoiToolStripMenuItem
             // 
             this.adaugaVacanteNoiToolStripMenuItem.Name = "adaugaVacanteNoiToolStripMenuItem";
             this.adaugaVacanteNoiToolStripMenuItem.Size = new System.Drawing.Size(320, 36);
             this.adaugaVacanteNoiToolStripMenuItem.Text = "Adauga Vacante Noi";
+            this.adaugaVacanteNoiToolStripMenuItem.Click += new System.EventHandler(this.adaugaVacanteNoiToolStripMenuItem_Click);
             // 
             // vacanteleMeleToolStripMenuItem
             // 
             this.vacanteleMeleToolStripMenuItem.Name = "vacanteleMeleToolStripMenuItem";
             this.vacanteleMeleToolStripMenuItem.Size = new System.Drawing.Size(192, 36);
             this.vacanteleMeleToolStripMenuItem.Text = "Vacantele Mele";
+            this.vacanteleMeleToolStripMenuItem.Click += new System.EventHandler(this.vacanteleMeleToolStripMenuItem_Click);
             // 
             // emailToolStripMenuItem
             // 
@@ -230,12 +233,14 @@
             this.deconectareToolStripMenuItem.Name = "deconectareToolStripMenuItem";
             this.deconectareToolStripMenuItem.Size = new System.Drawing.Size(238, 36);
             this.deconectareToolStripMenuItem.Text = "Deconectare";
+            this.deconectareToolStripMenuItem.Click += new System.EventHandler(this.deconectareToolStripMenuItem_Click);
             // 
             // iesireToolStripMenuItem
             // 
             this.iesireToolStripMenuItem.Name = "iesireToolStripMenuItem";
             this.iesireToolStripMenuItem.Size = new System.Drawing.Size(238, 36);
             this.iesireToolStripMenuItem.Text = "Iesire";
+            this.iesireToolStripMenuItem.Click += new System.EventHandler(this.iesireToolStripMenuItem_Click);
             // 
             // pictureBox_loc
             // 

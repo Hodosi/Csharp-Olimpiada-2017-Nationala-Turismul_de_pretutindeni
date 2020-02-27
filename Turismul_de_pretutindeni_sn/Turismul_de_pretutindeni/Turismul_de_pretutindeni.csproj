@@ -45,6 +45,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CONNECTION.cs" />
+    <Compile Include="FrmAdaugaVacante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAdaugaVacante.Designer.cs">
+      <DependentUpon>FrmAdaugaVacante.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAdminNou.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAdminNou.Designer.cs">
+      <DependentUpon>FrmAdminNou.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmAutentificare.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +81,12 @@
     <Compile Include="FrmVacanta.Designer.cs">
       <DependentUpon>FrmVacanta.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmVacanteleMele.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmVacanteleMele.Designer.cs">
+      <DependentUpon>FrmVacanteleMele.cs</DependentUpon>
+    </Compile>
     <Compile Include="GLOBAL.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -76,6 +94,12 @@
     <Compile Include="REZERVARI.cs" />
     <Compile Include="UTILIZATORI.cs" />
     <Compile Include="VACANTA.cs" />
+    <EmbeddedResource Include="FrmAdaugaVacante.resx">
+      <DependentUpon>FrmAdaugaVacante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAdminNou.resx">
+      <DependentUpon>FrmAdminNou.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmAutentificare.resx">
       <DependentUpon>FrmAutentificare.cs</DependentUpon>
     </EmbeddedResource>
@@ -87,6 +111,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmVacanta.resx">
       <DependentUpon>FrmVacanta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmVacanteleMele.resx">
+      <DependentUpon>FrmVacanteleMele.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

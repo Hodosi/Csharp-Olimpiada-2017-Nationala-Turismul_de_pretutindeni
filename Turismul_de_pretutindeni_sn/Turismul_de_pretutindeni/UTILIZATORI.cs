@@ -57,7 +57,7 @@ namespace Turismul_de_pretutindeni
             }
         }
 
-        public bool addUser(string nume, string prenume, string email, string parola,int tip)
+        public bool addUser(string nume, string prenume, string email, string parola, int tip)
         {
             SqlCommand command = new SqlCommand();
             command.CommandText = "INSERT INTO Utilizatori(Nume,Prenume,Email,Parola,TipCont) VALUES(@nm,@pn,@em,@pass,@tip)";
@@ -82,5 +82,43 @@ namespace Turismul_de_pretutindeni
                 return false;
             }
         }
+
+        public DataTable getUser()
+        {
+            SqlCommand command = new SqlCommand();
+            command.CommandText = "SELECT Email FROM Utilizatori";
+            command.Connection = conn.GetConnection();
+
+            DataTable table = new DataTable();
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            adapter.SelectCommand = command;
+            adapter.Fill(table);
+
+            return table;
+        }
+
+        public bool updateAdmin(string em,int val=0)
+        {
+            SqlCommand command = new SqlCommand();
+            command.CommandText = "UPDATE Utilizatori SET TipCont=@val WHERE email=@em";
+            command.Connection = conn.GetConnection();
+
+            command.Parameters.Add("em", SqlDbType.VarChar).Value = em;
+            command.Parameters.Add("val", SqlDbType.Int).Value = val;
+
+            conn.openConnection();
+            if (command.ExecuteNonQuery() == 1)
+            {
+                conn.closeConnection();
+                return true;
+            }
+            else
+            {
+                conn.closeConnection();
+                return false;
+            }
+        }
+
+
     }
 }
